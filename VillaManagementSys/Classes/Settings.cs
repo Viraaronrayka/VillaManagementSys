@@ -8,6 +8,8 @@
             public static string Deleted = "Deleted";
             public static string Reserved = "Reserved";
             public static string Unconfirmed = "Unconfirmed";
+            // new changes
+
         }
     }
 }
