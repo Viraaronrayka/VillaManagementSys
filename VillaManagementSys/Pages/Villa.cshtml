@@ -1,0 +1,24 @@
+﻿@page
+@model VillaManagementSys.Pages.VillaModel
+@{
+    <table>
+    @foreach(var villa in Model.villas)
+    {
+        <tr>
+        <td>
+        <b>
+            @villa.Name
+        </b>
+        </td>
+        
+        <td><p>
+        @villa.Description
+        </p>
+        </td>
+        <td>
+        
+        </td>
+        </tr>
+    }
+    </table>
+}

@@ -1,0 +1,37 @@
+﻿@page
+@using VillaManagementSys.Db;
+@model VillaManagementSys.Pages.LoginModel
+@{
+}
+<center>
+
+<h1>ورود به سامانه</h1>
+
+<form method = "post">    
+    <input type="text" name ="txtUsername" placeholder = "نام کاربری تان را وارد نمایید"/><br/>
+    <input type = "password" name="txtPassword" /><br/>
+    <input type = "submit" value = "ورود به سامانه" />
+</form>
+<div style="background-color:gray;border-radius:15px;">
+    @{
+        if(ViewData["LoggedInUser"] == null)
+        {
+            if(ViewData["Message"] != null)
+            {
+                <p style="color:red">@ViewData["Message"]</p>
+            }
+        }
+        else
+        {
+                <p> @((User?)ViewData["LoggedInUser"]).Username!</p>
+            }
+            // بررسی اینکه کاربرجاری مدئیر سیستم هست یا خیر
+
+            // نمایش خطای رخ داده شده (در صورت وجود) به صرفا مدیر سیستم
+            if((bool?)(ViewData["IsAdmin"]) == true)
+            {
+                <p>ViewData["Error"]</p>
+            }
+
+    }</div>
+</center>
